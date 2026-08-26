@@ -1,17 +1,8 @@
 /*como se distribuyen los elementos */
 @use "variables" as *;
 
-.main {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 0;
-  display: grid;
-  grid-template-areas:
-    "sobre"
-    "proyectos"
-    "video";
-  gap: 40px;
+main {
+  padding: 20px 0;
 }
 
 #sobre-mi {

@@ -1,120 +1,35 @@
-@charset "UTF-8";
-/*VARIABLES*/
-/*como funciona globalmente el proyecto*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  background: radial-gradient circle at top left, rgba(255, 79, 163, 0.1215686275), transparent 50%, radial-gradient circle at bottom right, rgba(125, 77, 255, 0.1254901961), transparent 50%, #0f0f12;
-  color: #f4f4f4;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-left: 40px;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-p {
-  color: #c8c8c8;
-  font-size: 1.05rem;
-}
-
-ul {
-  padding-left: 25px;
-  list-style: none;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/*como se distribuyen los elementos */
-.main {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 0;
-  display: grid;
-  grid-template-areas: "sobre" "proyectos" "video";
-  gap: 40px;
-}
-
-#sobre-mi {
-  grid-area: sobre;
-}
-
-#proyectos {
-  grid-area: proyectos;
-}
-
-#multimedia {
-  grid-area: video;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
-}
-
-.article {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  min-width: 300px;
-}
-
-.figure {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
 /*como se ve cada componente del proyecto*/
+@use "variables" as *;
+@use "mixins" as *;
+
 /* =========================
    HEADER
    ========================= */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+
   padding: 20px 8%;
   margin-bottom: 30px;
+
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(15, 15, 18, 0.85);
+
+  background: rgba(15, 15, 18, .85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
+
 
 /* =========================
    NAVBAR
    ========================= */
+
 .navbar {
   padding: 15px 8%;
   margin-bottom: 40px;
@@ -129,50 +44,61 @@ li {
 }
 
 .nav-link {
-  color: #f4f4f4 !important;
+  color: $blanco !important;
   font-weight: 600;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .nav-link:hover {
-  color: #ff4fa3 !important;
+  color: $rosa !important;
 }
+
 
 /* =========================
    SECTIONS
    ========================= */
+
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+
   padding: 40px;
   margin-bottom: 40px;
-  background: #0f0f12;
+
+  background: $fondo-card;
   border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: 0.4s;
+
+  @include sombra;
+
+  transition: .4s;
 }
 
 .section:hover {
   transform: translateY(-5px);
-  background: #242430;
+  background: $fondo-hover;
 }
+
 
 /* =========================
    ARTICLE
    ========================= */
+
 .article {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   flex: 1;
   min-width: 300px;
 }
 
+
 /* =========================
    IMÁGENES
    ========================= */
+
 .figure {
   flex: 1 1 40%;
   text-align: center;
@@ -182,59 +108,78 @@ li {
   width: 100%;
   max-width: 150px;
   height: auto;
+
   display: block;
   margin: auto;
+
   border-radius: 20px;
 }
 
 .profile-img {
   width: 50px;
   height: 50px;
+
   border-radius: 20px;
   object-fit: cover;
 }
 
+
 /* =========================
    LOGO
    ========================= */
+
 .logo {
   width: 50px;
   height: 50px;
+
   border-radius: 50%;
 }
+
 
 /* =========================
    BOTONES
    ========================= */
+
 .button {
   display: inline-block;
+
   padding: 12px 25px;
-  color: #f4f4f4;
-  background: linear-gradient(90deg, #ff4fa3, #ff9b42);
+
+  color: $blanco;
+  background: linear-gradient(90deg, $rosa, $naranja);
+
   border-radius: 25px;
+
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+
+  transition: .3s;
 }
 
 .button:hover {
   transform: translateY(-3px);
 }
 
+
 /* =========================
    VIDEO
    ========================= */
+
 .video {
   width: 100%;
   max-width: 900px;
+
   border-radius: 20px;
+
   display: block;
   margin: auto;
 }
 
+
 /* =========================
    CARRUSEL
    ========================= */
+
 .carousel {
   width: 100%;
   max-width: 900px;
@@ -244,82 +189,106 @@ li {
 .carousel img {
   width: 100%;
   height: 400px;
+
   object-fit: cover;
   border-radius: 20px;
 }
 
+
 /* =========================
    PROJECT CARDS
    ========================= */
+
 .project-card {
   padding: 20px;
-  background: linear-gradient(135deg, #0f0f12, #242430);
+
+  background: linear-gradient(
+    135deg,
+    $fondo-card,
+    $fondo-hover
+  );
+
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: 0.3s;
+
+  @include sombra;
+
+  transition: .3s;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
+
 /* =========================
    FOOTER
    ========================= */
+
 .footer {
   padding: 30px 8%;
   margin-top: 40px;
+
   text-align: center;
-  background: #080808;
+
+  background: $negro;
 }
 
 .footer p {
   margin: 0;
-  color: #c8c8c8;
+  color: $gris;
 }
+
 
 /* =========================
    SCROLLBAR
    ========================= */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff4fa3;
+  background: $rosa;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: $negro;
 }
+
 
 /* =========================
    RESPONSIVE
    ========================= */
+
 @media (min-width: 768px) {
+
   .section {
     flex-direction: row;
     align-items: center;
   }
+
   .article {
     flex: 1 1 60%;
   }
+
   .figure {
     flex: 1 1 40%;
   }
+
   .carousel img {
     height: 450px;
   }
 }
+
+
 @media (min-width: 1024px) {
+
   .section {
     padding: 50px;
   }
+
   .carousel img {
     height: 500px;
   }
 }
-/*sass --watch ./scss/main.scss styles/styles.css */
-
-/*# sourceMappingURL=styles.css.map */

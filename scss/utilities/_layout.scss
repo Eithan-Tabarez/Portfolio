@@ -1,0 +1,47 @@
+/*como se distribuyen los elementos */
+@use "variables" as *;
+
+.main {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 0;
+  display: grid;
+  grid-template-areas:
+    "sobre"
+    "proyectos"
+    "video";
+  gap: 40px;
+}
+
+#sobre-mi {
+  grid-area: sobre;
+}
+
+#proyectos {
+  grid-area: proyectos;
+}
+
+#multimedia {
+  grid-area: video;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 300px;
+}
+
+.figure {
+  flex: 1 1 40%;
+  text-align: center;
+}

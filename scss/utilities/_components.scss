@@ -2,9 +2,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-/* =========================
-   HEADER
-   ========================= */
+/* HEADER */
 
 .header {
   display: flex;
@@ -26,9 +24,7 @@
 }
 
 
-/* =========================
-   NAVBAR
-   ========================= */
+/* NAVBAR */
 
 .navbar {
   padding: 15px 8%;
@@ -46,7 +42,7 @@
 .nav-link {
   color: $blanco !important;
   font-weight: 600;
-  transition: .3s;
+  @include transicion;
 }
 
 .nav-link:hover {
@@ -54,25 +50,21 @@
 }
 
 
-/* =========================
-   SECTIONS
-   ========================= */
+/* SECTIONS */
 
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-
   padding: 40px;
   margin-bottom: 40px;
-
+  animation: aparecer 0.8s ease;
   background: $fondo-card;
   border-radius: 25px;
 
   @include sombra;
-
-  transition: .4s;
+  @include transicion;
 }
 
 .section:hover {
@@ -81,9 +73,7 @@
 }
 
 
-/* =========================
-   ARTICLE
-   ========================= */
+/* ARTICLE */
 
 .article {
   display: flex;
@@ -95,9 +85,7 @@
 }
 
 
-/* =========================
-   IMÁGENES
-   ========================= */
+/* IMÁGENES */
 
 .figure {
   flex: 1 1 40%;
@@ -118,52 +106,47 @@
 .profile-img {
   width: 50px;
   height: 50px;
-
+  animation: aparecer 1s ease;
   border-radius: 20px;
   object-fit: cover;
 }
 
 
-/* =========================
-   LOGO
-   ========================= */
+/* LOGO  */
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width:  20%;
+  height: 20%;
 
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 
-/* =========================
-   BOTONES
-   ========================= */
+/* BOTONES */
 
-.button {
+%boton-base {
   display: inline-block;
-
   padding: 12px 25px;
-
-  color: $blanco;
-  background: linear-gradient(90deg, $rosa, $naranja);
-
   border-radius: 25px;
-
   text-decoration: none;
   font-weight: 600;
-
-  transition: .3s;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
-.button:hover {
-  transform: translateY(-3px);
+.button {
+  @extend %boton-base;
+  color: $blanco;
+  background: linear-gradient(90deg, $rosa, $naranja);
+  @include transicion(transform, 0.3s);
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
 
 
-/* =========================
-   VIDEO
-   ========================= */
+/* VIDEO */
 
 .video {
   width: 100%;
@@ -176,9 +159,7 @@
 }
 
 
-/* =========================
-   CARRUSEL
-   ========================= */
+/* CARRUSEL */
 
 .carousel {
   width: 100%;
@@ -195,9 +176,7 @@
 }
 
 
-/* =========================
-   PROJECT CARDS
-   ========================= */
+/*  PROJECT CARDS */
 
 .project-card {
   padding: 20px;
@@ -210,19 +189,28 @@
 
   border-radius: 20px;
 
-  @include sombra;
+  @include sombra(0 15px 35px rgba(0, 0, 0, .5));
 
-  transition: .3s;
-}
+  @include transicion(transform, 0.3s);}
 
 .project-card:hover {
   transform: translateY(-5px);
 }
+/* ANIMATION */
 
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
-/* =========================
-   FOOTER
-   ========================= */
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* FOOTER */
 
 .footer {
   padding: 30px 8%;
@@ -239,9 +227,7 @@
 }
 
 
-/* =========================
-   SCROLLBAR
-   ========================= */
+/*  SCROLLBAR */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -257,9 +243,7 @@
 }
 
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+/* RESPONSIVE */
 
 @media (min-width: 768px) {
 
@@ -290,10 +274,5 @@
 
   .carousel img {
     height: 500px;
-  }
-}
-@media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
   }
 }

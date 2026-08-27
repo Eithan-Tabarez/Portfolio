@@ -42,24 +42,42 @@
       </nav>
     </header>
   <main>
-    <div class="container"
+    <div class="container">
     <h1>Contacto</h1>
     <section class="section">
       <h2>Contacto</h2>
-      <form>
+      <form action="https://formspree.io/f/mvkopavk" method="POST">
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
+            required>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+          <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="nombre@ejemplo.com"
+          required>
         </div>
         <div class="mb-3">
           <label for="mensaje" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="mensaje" rows="4"></textarea>
+          <textarea
+            class="form-control"
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            required>
+          </textarea>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="button">
           Enviar
         </button>
       </form>

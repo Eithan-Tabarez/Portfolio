@@ -1,20 +1,7 @@
 /*como se distribuyen los elementos */
-@use "variables" as *;
 
 main {
   padding: 20px 0;
-}
-
-#sobre-mi {
-  grid-area: sobre;
-}
-
-#proyectos {
-  grid-area: proyectos;
-}
-
-#multimedia {
-  grid-area: video;
 }
 
 .projects-grid {
@@ -24,15 +11,8 @@ main {
   width: 100%;
 }
 
-.article {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  min-width: 300px;
-}
-
-.figure {
-  flex: 1 1 40%;
-  text-align: center;
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }

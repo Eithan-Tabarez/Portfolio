@@ -1,6 +1,6 @@
-@mixin sombra {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+@mixin sombra($sombra: 0 10px 30px rgba(0, 0, 0, .4)) {
+  box-shadow: $sombra
 }
-@mixin transicion {
-  transition: .3s;
+@mixin transicion($propiedad: all, $tiempo: 0.3s) {
+  transition: $propiedad $tiempo;
 }

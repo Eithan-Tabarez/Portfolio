@@ -2,6 +2,7 @@
 /*VARIABLES*/
 /*como funciona globalmente el proyecto*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -54,18 +55,6 @@ main {
   padding: 20px 0;
 }
 
-#sobre-mi {
-  grid-area: sobre;
-}
-
-#proyectos {
-  grid-area: proyectos;
-}
-
-#multimedia {
-  grid-area: video;
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -73,23 +62,13 @@ main {
   width: 100%;
 }
 
-.article {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  min-width: 300px;
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-
-.figure {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
 /*como se ve cada componente del proyecto*/
-/* =========================
-   HEADER
-   ========================= */
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -105,9 +84,7 @@ main {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* =========================
-   NAVBAR
-   ========================= */
+/* NAVBAR */
 .navbar {
   padding: 15px 8%;
   margin-bottom: 40px;
@@ -124,16 +101,14 @@ main {
 .nav-link {
   color: #f4f4f4 !important;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .nav-link:hover {
   color: #ff4fa3 !important;
 }
 
-/* =========================
-   SECTIONS
-   ========================= */
+/* SECTIONS */
 .section {
   display: flex;
   flex-direction: column;
@@ -141,10 +116,11 @@ main {
   gap: 30px;
   padding: 40px;
   margin-bottom: 40px;
+  animation: aparecer 0.8s ease;
   background: #0f0f12;
   border-radius: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: 0.4s;
+  transition: all 0.3s;
 }
 
 .section:hover {
@@ -152,9 +128,7 @@ main {
   background: #242430;
 }
 
-/* =========================
-   ARTICLE
-   ========================= */
+/* ARTICLE */
 .article {
   display: flex;
   flex-direction: column;
@@ -163,9 +137,7 @@ main {
   min-width: 300px;
 }
 
-/* =========================
-   IMÁGENES
-   ========================= */
+/* IMÁGENES */
 .figure {
   flex: 1 1 40%;
   text-align: center;
@@ -183,40 +155,39 @@ main {
 .profile-img {
   width: 50px;
   height: 50px;
+  animation: aparecer 1s ease;
   border-radius: 20px;
   object-fit: cover;
 }
 
-/* =========================
-   LOGO
-   ========================= */
+/* LOGO  */
 .logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  border-radius: 10%;
 }
 
-/* =========================
-   BOTONES
-   ========================= */
+/* BOTONES */
 .button {
   display: inline-block;
   padding: 12px 25px;
-  color: #f4f4f4;
-  background: linear-gradient(90deg, #ff4fa3, #ff9b42);
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
+.button {
+  color: #f4f4f4;
+  background: linear-gradient(90deg, #ff4fa3, #ff9b42);
+  transition: transform 0.3s;
+}
 .button:hover {
   transform: translateY(-3px);
 }
 
-/* =========================
-   VIDEO
-   ========================= */
+/* VIDEO */
 .video {
   width: 100%;
   max-width: 900px;
@@ -225,9 +196,7 @@ main {
   margin: auto;
 }
 
-/* =========================
-   CARRUSEL
-   ========================= */
+/* CARRUSEL */
 .carousel {
   width: 100%;
   max-width: 900px;
@@ -241,24 +210,31 @@ main {
   border-radius: 20px;
 }
 
-/* =========================
-   PROJECT CARDS
-   ========================= */
+/*  PROJECT CARDS */
 .project-card {
   padding: 20px;
   background: linear-gradient(135deg, #0f0f12, #242430);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: 0.3s;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* ANIMATION */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* FOOTER */
 .footer {
   padding: 30px 8%;
   margin-top: 40px;
@@ -271,9 +247,7 @@ main {
   color: #c8c8c8;
 }
 
-/* =========================
-   SCROLLBAR
-   ========================= */
+/*  SCROLLBAR */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -287,9 +261,7 @@ main {
   background: #080808;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+/* RESPONSIVE */
 @media (min-width: 768px) {
   .section {
     flex-direction: row;
@@ -313,11 +285,5 @@ main {
     height: 500px;
   }
 }
-@media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-/*sass --watch ./scss/main.scss styles/styles.css */
 
 /*# sourceMappingURL=styles.css.map */

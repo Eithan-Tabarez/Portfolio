@@ -3,32 +3,20 @@
 @use "mixins" as *;
 
 /* HEADER */
-
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-
-  padding: 20px 8%;
-  margin-bottom: 30px;
-
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  background: rgba(15, 15, 18, .85);
+  background: $fondo-header;
   backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  border-bottom: $border-header;
 }
-
-
 /* NAVBAR */
-
 .navbar {
-  padding: 15px 8%;
-  margin-bottom: 40px;
+  padding: 15px 0;
+  margin-bottom: 0;
 
   .container {
     align-items: center;
@@ -49,12 +37,17 @@
   .nav-link {
     color: $blanco !important;
     font-weight: 600;
+
     @include transicion;
-    &:hover {
+
+    &:hover,
+    &.active {
       color: $rosa !important;
     }
   }
 }
+
+
 
 .container {
   align-items: center;
@@ -123,8 +116,8 @@
 /* LOGO  */
 
 .logo {
-  width:  20%;
-  height: 20%;
+  width:  48px;
+  height: auto;
   object-fit: cover;
   border-radius: 10%;
 }
@@ -178,13 +171,40 @@
   width: 100%;
   height: 400px;
 
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 20px;
 }
 
 
 /*  PROJECT CARDS */
+.project-card-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  padding: 25px;
 
+  background: linear-gradient(
+    135deg,
+    $fondo-card,
+    $fondo-hover
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  @include sombra(0 15px 35px rgba(0, 0, 0, 0.5));
+  @include transicion(transform, 0.3s);
+
+  .button {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
 .project-card {
   padding: 20px;
 
@@ -280,6 +300,6 @@
   }
 
   .carousel img {
-    height: 500px;
+    aspect-ratio: 16/9;
   }
 }

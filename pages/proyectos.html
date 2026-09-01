@@ -13,54 +13,72 @@
   <title>Proyectos</title>
 </head>
 <body>
- <header>
-     <nav class="navbar navbar-expand-lg navbar-dark">
-       <div class="container">
-          <a class="navbar-brand" href="../index.html">
-            <img src="../assets/Logo.jpg" class="logo" alt="Logo">
-          </a>
-          <button
-             class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPortfolio">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarPortfolio">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="./sobre-mi.html">Sobre mí</a>
-              </li>
-              <li class="nav-item">
-               <a class="nav-link" href="proyectos.html">Proyectos</a>
-              </li>
-              <li class="nav-item">
-               <a class="nav-link" href="./habilidades.html">Habilidades</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contacto.html">Contacto</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/Logo.jpg" class="logo" alt="Logotipo de Eithan Tabarez">
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarPortfolio"
+        aria-controls="navbarPortfolio"
+        aria-expanded="false"
+        aria-label="Abrir o cerrar menú de navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarPortfolio">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="sobre-mi.html">Sobre mí</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="proyectos.html" aria-current="page">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="habilidades.html">Habilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ </header>
   <main>
     <div class="container">
       <h1>Proyectos</h1>
       <section class="section">
-        <article class="article">
-          <h2>Guía de Proyectos</h2>
-          <ul>
-            <li>
-              <a href="https://github.com/Eithan-Tabarez" class="button" target="_blank" rel="noopener noreferrer">
-                Proyecto 1: Portafolio Personal
-              </a>
-            </li>
-          </ul>
-         <p>Este proyecto es mi portafolio personal, donde muestro mis habilidades y proyectos realizados. Está desarrollado utilizando HTML, CSS y JavaScript.</p>
-        </article>
-      <figure class="figure">
-          <img src="../assets/GitHub.jpg" alt="Logotipo de Github" width="100" />
-      </figure>
-    </section>
+        <div>
+          <h2>Proyectos destacados</h2>
+          <p>
+            Una selección de trabajos realizados durante mi formación como
+            desarrollador web.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card-2">
+            <h3>Portfolio personal</h3>
+            <p>
+              Sitio web responsive para presentar mi perfil, habilidades, proyectos
+              y formas de contacto.
+            </p>
+            <p><strong>Tecnologías:</strong> HTML, SCSS y Bootstrap.</p>
+            <a class="button" href="https://github.com/Eithan-Tabarez" target="_blank" rel="noopener noreferrer"> Ver repositorio</a>
+          </article>
+          <article class="project-card-2">
+            <h3>Próximo proyecto</h3>
+            <p>
+              Próximamente agregaré una aplicación o sitio web desarrollado durante mi formación.
+            </p>
+            <p><strong>Tecnologías:</strong> Próximamente.</p>
+          </article>
+        </div>
+      </section>
     </div> 
   </main>
   <footer class="footer">

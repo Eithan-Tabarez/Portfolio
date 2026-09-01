@@ -43,7 +43,7 @@ Estudiante y desarrollador web en formación, interesado en aprender nuevas tecn
 
 ##Link
 
-https://eithan-tabarez.github.io/Porfolio/
+[text](https://eithan-portfolio.vercel.app/)
 
 ## Estado del proyecto
 

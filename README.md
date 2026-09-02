@@ -43,7 +43,7 @@ Estudiante y desarrollador web en formación, interesado en aprender nuevas tecn
 
 ##Link
 
-[text](https://eithan-portfolio.vercel.app/)
+[Ver sitio](https://eithan-portfolio.vercel.app/)
 
 ## Estado del proyecto
 

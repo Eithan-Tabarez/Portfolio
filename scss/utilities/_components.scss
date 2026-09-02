@@ -18,10 +18,6 @@
   padding: 15px 0;
   margin-bottom: 0;
 
-  .container {
-    align-items: center;
-  }
-
   .navbar-brand {
     margin-right: 40px;
   }
@@ -37,7 +33,6 @@
   .nav-link {
     color: $blanco !important;
     font-weight: 600;
-
     @include transicion;
 
     &:hover,
@@ -59,7 +54,7 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 40px;
+  padding: 20px;
   margin-bottom: 40px;
   animation: aparecer 0.8s ease;
   background: $fondo-card;
@@ -81,7 +76,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   flex: 1;
 }
 
@@ -105,8 +100,8 @@
 }
 
 .profile-img {
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
   animation: aparecer 1s ease;
   border-radius: 20px;
   object-fit: cover;
@@ -116,12 +111,11 @@
 /* LOGO  */
 
 .logo {
-  width:  48px;
+  width: 105px;
   height: auto;
   object-fit: cover;
   border-radius: 10%;
 }
-
 
 /* BOTONES */
 
@@ -165,14 +159,14 @@
   width: 100%;
   max-width: 900px;
   margin: auto;
-  position: relative;
 
-.carousel img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
-  border-radius: 20px;
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 20px;
   }
+
   .carousel-control-prev,
   .carousel-control-next {
     width: 10%;
@@ -180,9 +174,11 @@
     bottom: auto;
     transform: translateY(-50%);
   }
+
   .carousel-control-prev {
     left: 0;
   }
+
   .carousel-control-next {
     right: 0;
   }
@@ -191,6 +187,23 @@
 
 
 /*  PROJECT CARDS */
+
+.project-card {
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    $fondo-card,
+    $fondo-hover
+  );
+  border-radius: 20px;
+  @include sombra(0 15px 35px rgba(0, 0, 0, .5));
+  @include transicion(transform, 0.3s);
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
 .project-card-2 {
   display: flex;
   flex-direction: column;
@@ -218,24 +231,6 @@
   &:hover {
     transform: translateY(-5px);
   }
-}
-.project-card {
-  padding: 20px;
-
-  background: linear-gradient(
-    135deg,
-    $fondo-card,
-    $fondo-hover
-  );
-
-  border-radius: 20px;
-
-  @include sombra(0 15px 35px rgba(0, 0, 0, .5));
-
-  @include transicion(transform, 0.3s);}
-
-.project-card:hover {
-  transform: translateY(-5px);
 }
 /* ANIMATION */
 
@@ -287,10 +282,16 @@
 /* RESPONSIVE */
 
 @media (min-width: 768px) {
+  
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
 
   .section {
     flex-direction: row;
     align-items: center;
+    padding: 40px;
   }
 
   .article {
@@ -306,8 +307,10 @@
     .carousel-control-next {
       width: 12%;
     }
-  .carousel img {
-    height: 450px;
+  }
+  .carousel {
+    img {
+      height: 450px;
     }
   }
 }
@@ -319,8 +322,9 @@
     padding: 50px;
   }
 
-  .carousel img {
-    aspect-ratio: 16/9;
+  .carousel {
+     img {
+    height: 450px;
+    }
   }
-
 }

@@ -42,11 +42,6 @@
   }
 }
 
-
-
-.container {
-  align-items: center;
-}
 /* SECTIONS */
 
 .section {
@@ -62,6 +57,12 @@
 
   @include sombra;
   @include transicion;
+}
+
+.section-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .section:hover {
@@ -133,11 +134,11 @@
   color: $blanco;
   background: linear-gradient(90deg, $rosa, $naranja);
   @include transicion(transform, 0.3s);
-
   &:hover {
     transform: translateY(-3px);
   }
 }
+
 
 
 /* VIDEO */
@@ -166,6 +167,9 @@
     object-fit: contain;
     border-radius: 20px;
   }
+  .button {
+    margin-top: 10px;
+  }
 
   .carousel-control-prev,
   .carousel-control-next {
@@ -183,7 +187,6 @@
     right: 0;
   }
 }
-
 
 
 /*  PROJECT CARDS */
@@ -310,7 +313,7 @@
   }
   .carousel {
     img {
-      height: 450px;
+      height: 400px;
     }
   }
 }

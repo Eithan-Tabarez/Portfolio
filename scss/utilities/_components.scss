@@ -168,7 +168,12 @@
     border-radius: 20px;
   }
   .button {
-    margin-top: 10px;
+    display: block;
+    width: fit-content;
+    max-width: 90%;
+    margin: 20px auto 0;
+    text-align: center;
+    white-space: normal;
   }
 
   .carousel-control-prev,
@@ -284,6 +289,7 @@
 
 /* RESPONSIVE */
 
+/* TABLET */
 @media (min-width: 768px) {
   
   .profile-img {
@@ -294,8 +300,10 @@
   .section {
     flex-direction: row;
     align-items: center;
+    gap: 40px;
     padding: 40px;
   }
+
 
   .article {
     flex: 1 1 60%;
@@ -306,14 +314,18 @@
   }
 
   .carousel {
+
+    img {
+      height: 400px;
+    }
+
+    .button {
+      margin-top: 25px;
+    }
+
     .carousel-control-prev,
     .carousel-control-next {
       width: 12%;
-    }
-  }
-  .carousel {
-    img {
-      height: 400px;
     }
   }
 }
@@ -322,6 +334,7 @@
 @media (min-width: 1024px) {
 
   .section {
+    gap: 60px;
     padding: 50px;
   }
 

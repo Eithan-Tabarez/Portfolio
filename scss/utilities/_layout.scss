@@ -1,5 +1,4 @@
-/*como se distribuyen los elementos */
-
+/*estructura*/
 main {
   padding: 20px 0;
 }
@@ -11,8 +10,22 @@ main {
   width: 100%;
 }
 
+/* TABLET */
 @media (min-width: 768px) {
+
   .projects-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 25px;
   }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
 }
